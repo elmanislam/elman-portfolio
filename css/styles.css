@@ -1,92 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo&family=Delius&family=Roboto:wght@100&display=swap');
+
+:root {
+  --color-1: rgba(31, 31, 31, 0.9);
+  --color-2:  rgba(107, 107, 107, 0.9);
+
+  --color-3: rgba(255, 255, 255, 0.7);
+  --color-4: rgb(174, 174, 174);
+  --color-green: #27ab5e;
+  color-scheme: dark;
+
+}
+
 html {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+
 }
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
+
 }
 
 a {
   text-decoration: none;
-  color: #000;
+  color: white;
 }
-.site-header { 
-  
+
+.header { 
   height: 60px;
   width: 100%;
-
+  z-index: 300;
   position: fixed;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-1);
   letter-spacing: 4px;
-  font-family: Verdana,sans-serif;
+  font-family: 'Cardo', serif;
   line-height: 1.5;
+
+
 }
 
 
-.site-identity {
+
+.identity {
   float: left;
 
 }
 
-.site-identity h1 {
+.identity h1 {
   font-size: 1.5rem;
-  margin: .7rem 0 .3rem .7rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 1000;
+  margin: .3rem 0 .3rem .3rem;
+  padding: .5rem;
+
   display: inline-block;
 }
 
-.site-identity img {
+#logo a {
+  transition: .5s;
+}
+
+#logo a:hover {
+  font-size: 1.6rem;
+  text-shadow: 3px 3px 6px black;
+  color: green;
+
+}
+
+
+.identity img {
   max-width: 55px;
   float: left;
   margin: 0 10px 0 0;
 }
 
-.site-navigation {
+.navigation {
   float: right;
 }
 
-.site-navigation ul, li {
+.navigation ul, li {
   margin: 0; 
   padding: 0;
 }
 
-.site-navigation li {
+
+.navigation li {
   display: inline-block;
-  margin: 1.4rem 1rem 1rem 1rem;
+  margin: .75rem .75rem .75rem .75rem;
+
 }
+
+.box-hover {
+  padding: .5rem;
+  transition: .2s;
+  border-radius: 0.5rem;
+}
+
+.box-hover:hover {
+  background-color: rgba(107, 107, 107, 0.9);
+
+}
+
 
 #intro {
   box-sizing: inherit;
-  background-image: linear-gradient( 60deg, rgba(49, 83, 167, 0.2), rgba(24, 49, 163, 0.2) ), url(../images/header-image.jpg);
+  background-image: url(../images/header-image-2.jpg);
   
   background-position: center;
   background-size: cover;
   padding: 10px;
 
   resize: horizontal;
-  overflow: auto;
   max-width: 100%;
   height: calc(100vh - 16px);
 
-  border: 3px solid green;
-}
 
-.container {
-  height: 400px;
-  width: 100%;
 }
 
 .textbox {
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  margin-right: 10rem;
-  padding: 2.5rem;
-  background:rgba(255, 255, 255, 0.7);
+  position: relative;
+  top: 25%;
+  left: 50%;
+  max-width: 40%; 
+  padding: 5rem 2.5rem;
+  text-align: center;
+  font-family: 'Cardo', serif;
 
-  -moz-border-radius: 12rem / 6rem;
-  -webkit-border-radius: 12rem / 6rem;
-  border-radius: 12rem / 6rem;
-  border: 3px solid black;
+
+  color: linear-gradient(#e66465, #9198e5);
+} 
+
+@media only screen and (max-width: 600px) {
+  .textbox {
+    left: 32%;
+  }
+}
+
+@media only screen and (max-height: 800px) {
+  .textbox {
+    top: 20%;
+  }
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) 
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) 
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) 
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) 
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) 
+@media only screen and (min-width: 1200px) {...} */
+
+#about-me {
+  height: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+h1, h2 {
+  color:white;
+  text-align: center;
+  font-family: 'Cardo', serif;
+  font-size: clamp(2.2rem, 6vw, 5rem); 
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px black;
+}
+
+mark {
+  background: none;
+  color: green;
+  text-shadow: 1px 1px 2px black;
+}
+
+p mark {
+  color: rgb(0, 200, 0);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 4rem); 
+
+}
+
+.textbox p {
+  color:rgba(255, 255, 255, 0.85);
+  line-height: normal;
+
+}
+
+p {
+  font-family: 'Cardo', serif;
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+  text-align: center;
+  max-width: 90vw;
 }
